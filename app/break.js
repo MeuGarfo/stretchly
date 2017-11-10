@@ -1,5 +1,10 @@
 const {ipcRenderer} = require('electron')
 const Utils = require('./utils/utils')
+const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document)
+})
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
